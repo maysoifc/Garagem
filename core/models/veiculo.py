@@ -1,3 +1,5 @@
+from tabnanny import verbose
+
 from django.db import models
 from .modelo import Modelo
 from .cor import Cor
@@ -9,6 +11,10 @@ class Veiculo(models.Model):
     modelo = models.ForeignKey(Modelo, on_delete=models.PROTECT, related_name="veiculos")
     cor = models.ForeignKey(Cor, on_delete=models.PROTECT, related_name="veiculos")
     acessorio = models.ManyToManyField(Acessorio, related_name="veiculos")
+
+    class Meta:
+        verbose_name = "Veículo"
+        verbose_name_plural = "Veículos"
 
     def __str__(self):
         return f"{self.id} - {self.modelo} - {self.cor} ({self.ano})"

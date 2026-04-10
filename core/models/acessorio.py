@@ -4,7 +4,7 @@ class Acessorio(models.Model):
     descricao = models.CharField(max_length=100)
 
     class Meta:
-        verbose_name = "Acesorios"
+        verbose_name = "Acessório"
         verbose_name_plural = "Acessórios"
 
     def __str__(self):
