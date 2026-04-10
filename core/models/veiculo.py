@@ -5,7 +5,7 @@ from .acessorio import Acessorio
 
 class Veiculo(models.Model):
     ano = models.IntegerField(null=True, default=0)
-    preco = models.DecimalField(max_digits=7, decial_places=2, null=True, default=0)
+    preco = models.DecimalField(max_digits=7, decimal_places=2, null=True, default=0)
     modelo = models.ForeignKey(Modelo, on_delete=models.PROTECT, related_name="veiculos")
     cor = models.ForeignKey(Cor, on_delete=models.PROTECT, related_name="veiculos")
     acessorio = models.ManyToManyField(Acessorio, related_name="veiculos")
